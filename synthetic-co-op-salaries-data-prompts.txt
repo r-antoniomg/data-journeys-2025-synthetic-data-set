@@ -1,0 +1,85 @@
+# Prompts used for GPT-5 on Microsoft Copilot (University of Waterloo institutional instance) to generate a synthetic data set
+
+## First prompt
+
+- Create a new file called synthetic-co-op-salaries-data-v.0.0.csv
+- Add the following columns:
+ - Company / Role
+ - Salary Information (CAD unless otherwise specified)
+ - Benefits
+ - Year
+ - Position
+- For now, do not add any values
+
+## Second prompt
+
+Update v.0.0 adding 500 values to the Company / Role column choosing among the following patterns:
+
+[Company name]
+[Company name] (Geographic location)
+[Company name] (Geographic location Office)
+[Company name] (role)
+[Company name and role]
+[Acronym company name] (Expanded acronym)
+
+- Create fictional names for the companies, with names that sound like tech firms or government agencies.
+- There may be some duplication in the company names
+- Include inconsistencies in capitalization, as well as inconsistencies in parenthetical data. For example, a geographic location may be listed as (ON) or (Ontario), a role may be listed as (DEV) or (developer)
+- Sort the Company / Role column alphabetically
+
+Save the updated file using version number 0.1
+
+## Third prompt
+
+Open the file with version number 0.1
+- Do not change any existing values or sorting
+
+Make the following updates:
+
+1) In the Salary info column, fill out a random 76% of entries, choosing from among these possible patterns:
+
+[integer between 18 and 60]/hr
+[float between 18.00 and 60.00]/hr
+[integer between 18 and 60] USD/hr
+[float between 18.00 and 60.00] USD/hr
+[integer between 18 and 60]/hr USD
+[float between 18.00 and 60.00]/hr USD
+
+Using the above patterns, you may also include ranges as in the following example:
+
+40-50/hr
+
+2) Fill out a random 7% of entries choosing among these possible patterns:
+
+[integer between 18 and 60]/hr
+[float between 18.00 and 60.00]/hr
+[integer between 18 and 60] USD/hr
+[float between 18.00 and 60.00] USD/hr
+[integer between 18 and 60]/hr USD
+[float between 18.00 and 60.00]/hr USD
+
+[integer between 1000 and 2000]/wk
+[integer between 1000 and 2000]/week
+[integer between 1000 and 2000] USD/wk
+[integer between 1000 and 2000]/wk USD
+[integer between 1000 and 2000] USD/week
+[integer between 1000 and 2000]/week USD
+
+[integer between 1800 and 17000]/mo
+[integer between 1800 and 17000]/month
+[integer between 1800 and 17000] USD/mo
+[integer between 1800 and 17000] USD/month
+[integer between 1800 and 17000]/mo USD
+[integer between 1800 and 17000]/month USD
+
+- For any of the patterns in sections 1 and 2 above, you may add parenthetical information using the pattern: ([ordinal number] coop)
+ - example: 18/hr (1st coop)
+ - keep the ordinal numbers between 1st and 6th
+
+- For numbers equal to or higher than 1000, have inconsistent use of commas separating the thousands (example 1,000 or 1000)
+
+Save the updated file using version number 0.2
+
+## Remaining column values
+
+NOTE: other values were added manually to create version 0.3
